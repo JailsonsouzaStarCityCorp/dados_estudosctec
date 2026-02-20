@@ -53,3 +53,12 @@ cidade_menor_media = media_idade.loc[media_idade["idade"].idxmin()]
 
 print(f"\nCidade com maior média de idade: {cidade_maior_media['cidade']} ({cidade_maior_media['idade']:.1f})")
 print(f"Cidade com menor média de idade: {cidade_menor_media['cidade']} ({cidade_menor_media['idade']:.1f})")
+
+
+#Heatmap
+
+Tabela = pd.crosstab (df["cidade"], pd.cut(df["idade"], bins=5))
+plt.figure(figsize=(8,5))
+sb.heatmap(Tabela, annot=True, fmt="d", cmap="Blues")
+plt.title("Distribuição de faixa etaria por cidade")
+plt.show()
