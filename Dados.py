@@ -43,3 +43,13 @@ plt.xlabel("Cidade")
 plt.ylabel("Idade media")
 plt.xticks(rotation=45)
 plt.show()
+
+
+#idade Media e menor media de idade
+
+
+cidade_maior_media = media_idade.loc[media_idade["idade"].idxmax()]
+cidade_menor_media = media_idade.loc[media_idade["idade"].idxmin()]
+
+print(f"\nCidade com maior média de idade: {cidade_maior_media['cidade']} ({cidade_maior_media['idade']:.1f})")
+print(f"Cidade com menor média de idade: {cidade_menor_media['cidade']} ({cidade_menor_media['idade']:.1f})")
